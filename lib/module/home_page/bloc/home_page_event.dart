@@ -1,6 +1,6 @@
 part of 'home_page_bloc.dart';
 
 @immutable
-abstract class FamilyHistoryFhxEvent {}
+abstract class HomePageEvent {}
 
-class LoadFamilyHistoryFhxEvent extends FamilyHistoryFhxEvent {}
+class LoadHomePageEvent extends HomePageEvent {}

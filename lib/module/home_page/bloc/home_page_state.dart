@@ -1,8 +1,10 @@
 part of 'home_page_bloc.dart';
 
 @immutable
-abstract class FamilyHistoryFhxState {}
+abstract class HomePageState {}
 
-class FamilyHistoryFhxInitial extends FamilyHistoryFhxState {}
+class HomePageInitial extends HomePageState {}
 
-class LoadedFamilyHistoryFhxState extends FamilyHistoryFhxState {}
+class LoadingHomePageState extends HomePageState {}
+
+class LoadedHomePageState extends HomePageState {}
