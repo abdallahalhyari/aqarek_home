@@ -688,10 +688,10 @@ class Projects {
   String? imageurl;
   int? categoryid;
   int? cityid;
-  double? maxprice;
-  double? minprice;
-  double? maxspace;
-  double? minspace;
+  num? maxprice;
+  num? minprice;
+  num? maxspace;
+  num? minspace;
   int? maxbedroom;
   int? minbedroom;
   int? maxbathroom;

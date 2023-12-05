@@ -16,7 +16,7 @@ class Api {
         });
 
     if (response.statusCode == 200) {
-      homePageModel = HomePageModel.fromJson(json.decode(response.body));
+      homePageModel = HomePageModel.fromJson(json.decode(utf8.decode(response.bodyBytes)));
     }
     return homePageModel!;
   }

@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 const bool clientDB = false;
 
 void main() async {
+  await WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(

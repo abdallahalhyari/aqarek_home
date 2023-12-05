@@ -1,4 +1,7 @@
+import 'package:aqarek_home/module/home_page/ui/home_page_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'module/home_page/bloc/home_page_bloc.dart';
 import 'utils/theme/app_colors.dart';
 import 'utils/theme/custom_theme.dart';
 import 'widget/custom_error_widget.dart';
@@ -10,7 +13,7 @@ class AqarkApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp(
       themeMode: ThemeMode.system,
       builder: (context, widget) {
         ErrorWidget.builder = (FlutterErrorDetails errorDetails) {
@@ -21,6 +24,11 @@ class AqarkApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: CustomTheme.lightTheme(context),
       color: AppColors.primary,
+      home: BlocProvider<HomePageBloc>(
+    create: (context) {
+    return HomePageBloc();
+    },
+    child:HomePageView()),
       title: 'Aqark',
     );
   }
