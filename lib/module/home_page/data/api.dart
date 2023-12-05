@@ -11,7 +11,7 @@ class Api {
             'http://207.127.99.232:8080/ords/aqarek/property/home?deviceId'),
         headers: {
           "clientId": "31",
-          "langId": "en",
+          "langId": "ar",
           "sharedKey": "Ftjj#-ddtrum5261_gfRdCXooO#165?*234sEEd",
         });
 

@@ -17,4 +17,19 @@ class PathSvg {
 
   static final SvgPicture others =
       SvgPicture.asset(PathIcons.others, fit: BoxFit.cover);
+
+  static final SvgPicture home =
+      SvgPicture.asset(PathIcons.home, fit: BoxFit.cover);
+
+  static final SvgPicture land =
+      SvgPicture.asset(PathIcons.land, fit: BoxFit.cover);
+
+  static final SvgPicture rent =
+      SvgPicture.asset(PathIcons.rent, fit: BoxFit.cover);
+
+  static final SvgPicture haramin =
+      SvgPicture.asset(PathIcons.haramin, fit: BoxFit.cover);
+
+  static final SvgPicture vip =
+      SvgPicture.asset(PathIcons.vip, fit: BoxFit.cover);
 }
