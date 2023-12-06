@@ -17,8 +17,8 @@ class _HeaderGalleryWidgetState extends State<HeaderGalleryWidget> {
     return Stack(
       children: [
         Container(
+          decoration: BoxDecoration( borderRadius: BorderRadius.circular(5)),
             height: MediaQuery.sizeOf(context).height / 2,
-            color: const Color.fromRGBO(20, 76, 237, 1.0),
             padding: const EdgeInsets.only(bottom: 20),
             child: CarouselSlider(
                 items: widget.headerGallery
@@ -55,7 +55,6 @@ class _HeaderGalleryWidgetState extends State<HeaderGalleryWidget> {
             ),
           ),
         ),
-
       ],
     );
   }
