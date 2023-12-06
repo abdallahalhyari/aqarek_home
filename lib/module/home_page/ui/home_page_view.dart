@@ -160,7 +160,6 @@ class _Page1State extends State<Page1> {
 
                       Expanded(
                           child: ListView(
-                              physics: const BouncingScrollPhysics(),
                               padding: const EdgeInsets.all(0),
                               children: [
                                 HeaderGalleryWidget(
