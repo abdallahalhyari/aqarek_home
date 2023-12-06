@@ -25,10 +25,10 @@ class AqarkApp extends StatelessWidget {
       theme: CustomTheme.lightTheme(context),
       color: AppColors.primary,
       home: BlocProvider<HomePageBloc>(
-    create: (context) {
-    return HomePageBloc();
-    },
-    child:HomePageView()),
+          create: (context) {
+            return HomePageBloc();
+          },
+          child: const HomePageView()),
       title: 'Aqark',
     );
   }
