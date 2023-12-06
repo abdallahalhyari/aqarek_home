@@ -11,13 +11,13 @@ class HeaderGalleryWidget extends StatefulWidget {
 }
 
 class _HeaderGalleryWidgetState extends State<HeaderGalleryWidget> {
-  int index=0;
+  int index = 0;
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          decoration: BoxDecoration( borderRadius: BorderRadius.circular(5)),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
             height: MediaQuery.sizeOf(context).height / 2,
             padding: const EdgeInsets.only(bottom: 20),
             child: CarouselSlider(
@@ -30,12 +30,10 @@ class _HeaderGalleryWidgetState extends State<HeaderGalleryWidget> {
                         )))
                     .toList(),
                 options: CarouselOptions(
-                  onPageChanged: (i,c){
-                    index=i;
-                    setState(() {
-
-                    });
-                  },
+                    onPageChanged: (i, c) {
+                      index = i;
+                      setState(() {});
+                    },
                     autoPlay: true,
                     height: double.infinity,
                     enlargeCenterPage: true,
@@ -45,13 +43,29 @@ class _HeaderGalleryWidgetState extends State<HeaderGalleryWidget> {
                     ))),
         Positioned(
           bottom: 20,
-
           child: Container(
             padding: const EdgeInsets.all(10),
             alignment: Alignment.center,
             height: 35,
-            child: ListView.builder(shrinkWrap: true,scrollDirection: Axis.horizontal,itemCount: widget.headerGallery.length,itemBuilder:(context,i)=>
-                Container(padding:index==i? const EdgeInsets.symmetric(horizontal: 10):const EdgeInsets.all(3),margin:const EdgeInsets.all(5),decoration: BoxDecoration(color:index==i?Colors.white:Colors.grey.shade300,shape:index==i?BoxShape.rectangle:BoxShape.circle),)
+            child: Directionality(
+              textDirection: TextDirection.rtl,
+              child: ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: widget.headerGallery.length,
+                  itemBuilder: (context, i) => Container(
+                        padding: index == i
+                            ? const EdgeInsets.symmetric(horizontal: 10)
+                            : const EdgeInsets.all(3),
+                        margin: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            color: index == i
+                                ? Colors.white
+                                : Colors.grey.shade300,
+                            shape: index == i
+                                ? BoxShape.rectangle
+                                : BoxShape.circle),
+                      )),
             ),
           ),
         ),

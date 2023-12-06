@@ -10,49 +10,38 @@ class HeaderWidgetsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
         height: 120,
-        child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: headerWidgets.length,
-            itemBuilder: (context, index) => Row(children: [
-                  const SizedBox(width: 5),
-                  Container(
-                      decoration: BoxDecoration(
-                          color: const Color.fromRGBO(240, 240, 240, 1),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Column(children: [
-                        Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: const Color.fromRGBO(20, 76, 237, 1.0)),
-                            margin: const EdgeInsets.all(15),
-                            height: 70,
-                            width: 70,
-                            child: SvgPicture.network(
-                                headerWidgets[index].imageurl ?? '')),
-                        TextViewCustom(
-                            size: 12,
-                            text: headerWidgets[index].title.toString())
-                      ])),
-                  const SizedBox(width: 5),
-                  Container(
-                      decoration: BoxDecoration(
-                          color: const Color.fromRGBO(240, 240, 240, 1),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Column(children: [
-                        Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: const Color.fromRGBO(20, 76, 237, 1.0)),
-                            margin: const EdgeInsets.all(15),
-                            height: 70,
-                            width: 70,
-                            child: SvgPicture.network(
-                                headerWidgets[index].imageurl ?? '')),
-                        TextViewCustom(
-                            size: 12,
-                            text: headerWidgets[index].title.toString())
-                      ])),
-                  const SizedBox(width: 5),
-                ])));
+        child: Directionality(
+          textDirection: TextDirection.rtl,
+          child: Center(
+            child: ListView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: headerWidgets.length,
+                itemBuilder: (context, index) => Row(children: [
+                      const SizedBox(width: 10),
+                      Container(
+                          width: 120,
+                          decoration: BoxDecoration(
+                              color: const Color.fromRGBO(240, 240, 240, 1),
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Column(children: [
+                            Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15),
+                                    color:
+                                        const Color.fromRGBO(20, 76, 237, 1.0)),
+                                margin: const EdgeInsets.all(15),
+                                height: 70,
+                                width: 70,
+                                child: SvgPicture.network(
+                                    headerWidgets[index].imageurl ?? '')),
+                            TextViewCustom(
+                                size: 12,
+                                text: headerWidgets[index].title.toString())
+                          ])),
+                      const SizedBox(width: 30),
+                    ])),
+          ),
+        ));
   }
 }

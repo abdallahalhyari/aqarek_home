@@ -181,7 +181,9 @@ class _Page1State extends State<Page1> {
                             UnitsItemsWidget(
                                 item:
                                     homePageBloc.homePageModel!.units!.items!),
-                            const LastSeenWidget(),
+                            LastSeenWidget(
+                                lastseen: homePageBloc
+                                    .homePageModel!.lastseen![0].layouts!),
                           ])),
                       const SizedBox(height: 100)
                     ])))
