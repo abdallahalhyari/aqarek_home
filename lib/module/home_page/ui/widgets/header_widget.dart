@@ -25,18 +25,6 @@ class HeaderWidgetsWidget extends StatelessWidget {
                         child: SvgPicture.network(
                             headerWidgets[index].imageurl ?? '')),
                     TextViewCustom(text: headerWidgets[index].title.toString())
-                  ]),
-                  Column(children: [
-                    Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: const Color.fromRGBO(20, 76, 237, 1.0)),
-                        margin: const EdgeInsets.all(15),
-                        height: 70,
-                        width: 70,
-                        child: SvgPicture.network(
-                            headerWidgets[index].imageurl ?? '')),
-                    TextViewCustom(text: headerWidgets[index].title.toString())
                   ])
                 ])));
   }
