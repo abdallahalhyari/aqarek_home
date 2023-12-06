@@ -3,8 +3,11 @@ import 'path_icons.dart';
 import 'package:flutter_svg/svg.dart';
 
 class PathSvg {
-  static final SvgPicture category =
-      SvgPicture.asset(PathIcons.category, fit: BoxFit.contain);
+  static final SvgPicture category = SvgPicture.asset(
+    PathIcons.category,
+    fit: BoxFit.contain,
+    color: const Color.fromRGBO(20, 76, 237, 1.0),
+  );
 
   static final SvgPicture map =
       SvgPicture.asset(PathIcons.map, fit: BoxFit.cover);
