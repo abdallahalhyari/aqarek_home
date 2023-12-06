@@ -101,7 +101,7 @@ class _HomePageViewState extends State<HomePageView> {
                                 // ignore: deprecated_member_use
                                 color: const Color.fromRGBO(20, 76, 237, 1.0),
                               ),
-                              itemLabel: 'خريطة عقارك'),
+                              itemLabel: 'خريطة'),
                           BottomBarItem(
                               inActiveItem: PathSvg.search,
                               activeItem: PathSvg.search,
@@ -193,7 +193,8 @@ class _Page1State extends State<Page1> {
                                 item:
                                     homePageBloc.homePageModel!.units!.items!),
                             const LastSeenWidget(),
-                          ]))
+                          ])),
+                     const SizedBox(height: 100)
                     ])))
             : const Center(child: CircularProgressIndicator());
       },
