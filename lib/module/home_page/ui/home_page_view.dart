@@ -157,16 +157,16 @@ class _Page1State extends State<Page1> {
                 body: SizedBox(
                     height: MediaQuery.sizeOf(context).height,
                     child: Column(children: [
-                      HeaderGalleryWidget(
-                          headerGallery:
-                              homePageBloc.homePageModel!.headerGallery!),
-                      const SizedBox(height: 15),
+
                       Expanded(
                           child: ListView(
                               physics: const BouncingScrollPhysics(),
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 10, horizontal: 2),
+                              padding: const EdgeInsets.all(0),
                               children: [
+                                HeaderGalleryWidget(
+                                    headerGallery:
+                                    homePageBloc.homePageModel!.headerGallery!),
+                                const SizedBox(height: 15),
                             HeaderWidgetsWidget(
                                 headerWidgets:
                                     homePageBloc.homePageModel!.headerWidgets!),

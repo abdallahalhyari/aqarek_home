@@ -13,17 +13,23 @@ class LatestprojectWidget extends StatelessWidget {
         child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
           const Padding(
               padding: EdgeInsets.only(right: 15.0),
-              child: TextViewCustom(
-                  text: 'أحدث مشاريع عقارك',
-                  size: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromRGBO(20, 76, 237, 1.0))),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Icon(Icons.arrow_drop_down,size: 40,),
+                  TextViewCustom(
+                      text: 'أحدث مشاريع عقارك',
+                      size: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(20, 76, 237, 1.0)),
+
+                ],
+              )),
           Expanded(
               child: ListView.builder(
                   physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemCount: latestProjectsItems?.length,
-                  // homePageBloc.homePageModel!.latestProjects!.items!.length,
                   itemBuilder: (context, index) => Stack(
                     alignment: Alignment.center,
                     children: [
@@ -40,7 +46,15 @@ class LatestprojectWidget extends StatelessWidget {
                           width: 150
                           // child: Image.network(homePageBloc.homePageModel!.latestProjects!.items![index].image??'',fit: BoxFit.fill),
                           ),
-                        Positioned(bottom: 1,child: Container(height: 70,width: 150,decoration: BoxDecoration(border:Border.all(color: Colors.grey.shade400),color: Colors.white, borderRadius: BorderRadius.vertical(bottom:  Radius.circular(15)),),))
+                        Positioned(bottom: 1,child: Container(child:Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            TextViewCustom(text: latestProjectsItems?[index].title,fontWeight: FontWeight.bold,size: 14),
+                            SizedBox(height: 6),
+                            TextViewCustom(text: latestProjectsItems?[index].cityname)
+                          ],
+                        ) ,height: 70,width: 150,decoration: BoxDecoration(border:Border.all(color: Colors.grey.shade400),color: Colors.white, borderRadius: const BorderRadius.vertical(bottom:  Radius.circular(15)),),))
                     ],
                   )))
         ]));
